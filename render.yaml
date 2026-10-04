@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: TravelGuide-backend
+    env: python
+    plan: free
+    rootDir: Backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: MURF_API_KEY
+        sync: false

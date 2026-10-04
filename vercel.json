@@ -1,0 +1,14 @@
+{
+  "name": "TravelGuide",
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/Frontend/index.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/Frontend/$1"
+    }
+  ]
+}
