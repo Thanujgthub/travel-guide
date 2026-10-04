@@ -31,7 +31,14 @@ const KNOWN_PLACES = [
 
 const FALLBACK_IMAGE = 'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=400&h=300&fit=crop';
 
-const GENERATE_AUDIO_GUIDE_API_URL = 'http://127.0.0.1:5000/generate-audio-guide';
+// --- API Configuration ---
+// When deployed on Vercel/GitHub Pages, update this with your Render backend URL:
+const DEFAULT_PROD_API = 'https://travel-guide-backend.onrender.com';
+const BACKEND_BASE_URL = window.API_BASE_URL 
+  || localStorage.getItem('API_BASE_URL') 
+  || (['localhost', '127.0.0.1'].includes(window.location.hostname) ? 'http://127.0.0.1:5000' : DEFAULT_PROD_API);
+
+const GENERATE_AUDIO_GUIDE_API_URL = `${BACKEND_BASE_URL}/generate-audio-guide`;
 
 // --- State ---
 const state = {
